@@ -1,3 +1,11 @@
+'''
+Author: wuxulong19950206 1287173754@qq.com
+Date: 2024-03-09 15:53:33
+LastEditors: wuxulong19950206 1287173754@qq.com
+LastEditTime: 2024-03-10 11:03:04
+FilePath: \ASRT_SpeechRecognition\train_speech_model.py
+Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+'''
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
@@ -47,7 +55,7 @@ train_data = DataLoader('train')
 opt = Adam(learning_rate=0.0001, beta_1=0.9, beta_2=0.999, decay=0.0, epsilon=10e-8)
 ms = ModelSpeech(sm251bn, feat, max_label_length=64)
 
-# ms.load_model('save_models/' + sm251bn.get_model_name() + '.model.h5')
+ms.load_model("save_models\SpeechModel251bn\SpeechModel251bn.model.h5")
 ms.train_model(optimizer=opt, data_loader=train_data,
-               epochs=50, save_step=1, batch_size=16, last_epoch=0)
+               epochs=50, save_step=1, batch_size=1, last_epoch=0)
 ms.save_model('save_models/' + sm251bn.get_model_name())

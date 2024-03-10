@@ -8,10 +8,10 @@ __pycache__
 *.wav
 *.model_yaml
 Test_Report_*
-
+data/*
 dataset
 data_pinyin.txt
-
+*.trn
 testClient.py
 
 webapi/

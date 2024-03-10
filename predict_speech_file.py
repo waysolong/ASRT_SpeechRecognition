@@ -1,3 +1,11 @@
+'''
+Author: wuxulong19950206 1287173754@qq.com
+Date: 2024-03-09 15:53:33
+LastEditors: wuxulong19950206 1287173754@qq.com
+LastEditTime: 2024-03-10 00:00:12
+FilePath: \ASRT_SpeechRecognition\predict_speech_file.py
+Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+'''
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
@@ -44,8 +52,8 @@ sm251bn = SpeechModel251BN(
 feat = Spectrogram()
 ms = ModelSpeech(sm251bn, feat, max_label_length=64)
 
-ms.load_model('save_models/' + sm251bn.get_model_name() + '.model.h5')
-res = ms.recognize_speech_from_file('filename.wav')
+ms.load_model('save_models/SpeechModel251bn/' + sm251bn.get_model_name() + '.model.h5')
+res = ms.recognize_speech_from_file('A2_0.wav')
 print('*[提示] 声学模型语音识别结果：\n', res)
 
 ml = ModelLanguage('model_language')

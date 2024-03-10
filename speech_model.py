@@ -45,6 +45,7 @@ class ModelSpeech:
         self.data_loader = None
         self.speech_model = speech_model
         self.trained_model, self.base_model = speech_model.get_model()
+        # self.load_model("save_models\SpeechModel251bn\SpeechModel251bn.model.h5")
         self.speech_features = speech_features
         self.max_label_length = max_label_length
 
@@ -137,6 +138,7 @@ class ModelSpeech:
         """
         加载模型参数
         """
+        print(f"loading pre-trained model from {filename}")
         self.speech_model.load_weights(filename)
 
     def save_model(self, filename):

@@ -28,11 +28,15 @@ import difflib
 import matplotlib.pyplot as plt
 import numpy as np
 
-
+import os
 def read_wav_data(filename: str) -> tuple:
     """
     读取一个wav文件，返回声音信号的时域谱矩阵和播放时间
     """
+    # if os.path.exists(filename):
+    #     print("文件存在")
+    # else:
+    #     print("文件不存在",filename)
     wav = wave.open(filename,"rb") # 打开一个wav格式的声音文件流
     num_frame = wav.getnframes() # 获取帧数
     num_channel=wav.getnchannels() # 获取声道数
